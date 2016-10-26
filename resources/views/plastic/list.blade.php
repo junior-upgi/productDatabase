@@ -14,8 +14,8 @@
     </form>
 </div>
 <div class="col-md-4">
-    <img id="photo" data-src="holder.js/140x140" class="img-thumbnail" src="" data-holder-rendered="true" style="width: 140px; height: 140px;">
-    <img id="print" data-src="holder.js/140x140" class="img-thumbnail" src="" data-holder-rendered="true" style="width: 140px; height: 140px;">
+    <img id="photoShow" data-src="holder.js/140x140" class="img-thumbnail" src="" data-holder-rendered="true" style="width: 140px; height: 140px;">
+    <img id="printShow" data-src="holder.js/140x140" class="img-thumbnail" src="" data-holder-rendered="true" style="width: 140px; height: 140px;">
 </div>
 <div class="col-md-12">
 @if(isset($plastic))

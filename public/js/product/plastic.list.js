@@ -33,11 +33,11 @@ $(function () {
             var picURL = picURL = url + '/storage/';
             var photo = $(this).children('td').children('#photoLocation').val();
             if (photo != '') {
-                $('#photo').attr('src', picURL + photo);
+                $('#photoShow').attr('src', picURL + photo);
             }
             var print = $(this).children('td').children('#printLocation').val();
             if (print != '') {
-                $('#print').attr('src', picURL + print);
+                $('#printShow').attr('src', picURL + print);
             }
         }
     );
