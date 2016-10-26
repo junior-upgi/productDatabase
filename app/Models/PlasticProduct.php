@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProductDatabase extends Model
+class PlasticProduct extends Model
 {   
     protected $connection = 'MSSQL';
-    protected $table = "productDatabase";
+    protected $table = "plasticProduct";
+    public $timestamps = false;
 }

@@ -16,7 +16,7 @@ use App\Service\Common;
  *
  * @package App\Repositories
  */
-class ProductRepository
+class Common
 {
 
     public function insert($table, $params)
@@ -35,7 +35,6 @@ class ProductRepository
                 'success' => false,
                 'msg' => $e['errorInfo'][2],
             );
-            throw $e;
         }
     }
 
@@ -55,7 +54,6 @@ class ProductRepository
                 'success' => false,
                 'msg' => $e['errorInfo'][2],
             );
-            throw $e;
         }
     }
 
@@ -63,7 +61,7 @@ class ProductRepository
     {
         try {
             $table->getConnection()->beginTransaction();
-            $table->delete($params);
+            $table->delete();
             $table->getConnection()->commit();
             return array(
                 'success' => true,
@@ -75,7 +73,6 @@ class ProductRepository
                 'success' => false,
                 'msg' => $e['errorInfo'][2],
             );
-            throw $e;
         }
     }
 }
