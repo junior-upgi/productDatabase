@@ -39,6 +39,10 @@ $(function () {
             if (print != '') {
                 $('#printShow').attr('src', picURL + print);
             }
+        },
+        function() {
+            $('#photoShow').attr('src', '');
+            $('#printShow').attr('src', '');
         }
     );
 });

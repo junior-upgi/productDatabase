@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<script src="{{url('/')}}/js/product/plastic.list.js?x=3"></script>
+<script src="{{url('/')}}/js/product/plastic.list.js?x=4"></script>
 <div style="margin-top:10px;"></div>
 <div class="col-md-8">
     <h2>塑膠產品資料表</h2>
@@ -17,9 +17,10 @@
     <img id="photoShow" data-src="holder.js/140x140" class="img-thumbnail" src="" data-holder-rendered="true" style="width: 140px; height: 140px;">
     <img id="printShow" data-src="holder.js/140x140" class="img-thumbnail" src="" data-holder-rendered="true" style="width: 140px; height: 140px;">
 </div>
-<div class="col-md-12">
+<div class="col-md-12" style="margin-top:10px;">
 @if(isset($plastic))
-    <table class="table table-bordered table-condensed" style="margin-top:10px;">
+<div style="weight:780px;height:600px;overflow:scroll;">
+    <table class="table table-bordered table-condensed">
         <thead>
             <tr>
                 <td>產品代號</td>
@@ -58,6 +59,7 @@
         @endforeach
         </tbody>
     </table>
+</div>
 @endif
 </div>
 @include('plastic.add')
