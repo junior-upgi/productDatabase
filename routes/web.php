@@ -14,6 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::any('plastic', 'ProductController@plasticList');
+Route::get('plastic', 'ProductController@plasticList');
 Route::post('plasticSave', 'ProductController@plasticSave');
 Route::post('plasticDelete', 'ProductController@plasticDelete');

@@ -29,8 +29,9 @@ class ProductController extends Controller
         $this->product = $product;
     }
 
-    public function plasticList(Request $request)
+    public function plasticList()
     {
+        $request = request();
         $list = null;
         $searchContent = $request->input('searchContent');
         if (isset($searchContent)) {
@@ -48,8 +49,9 @@ class ProductController extends Controller
             ->with('search', $searchContent);
     }
 
-    public function plasticSave(Request $request)
+    public function plasticSave()
     {
+        $request = request();
         $photo = $request->file('photo');
         $print = $request->file('print');
         $input = $request->input();
@@ -80,8 +82,9 @@ class ProductController extends Controller
         return $tran;
     }
 
-    public function plasticDelete(Request $request)
+    public function plasticDelete()
     {
+        $request = request();
         $input = $request->json()->all();
         $ind = $input['ind'];
         $del = $this->product->plasticDelete($ind);

@@ -4,9 +4,8 @@
 <div style="margin-top:10px;"></div>
 <div class="col-md-8">
     <h2>塑膠產品資料表</h2>
-    <form id="searchForm" action="{{url('/')}}/plastic" class="navbar-form" method="POST">
+    <form id="searchForm" action="{{url('/')}}/plastic" class="navbar-form" method="GET">
         <div class="form-group">
-            <input type="hidden" name="_token" value="{{{ csrf_token() }}}">
             <button type="button" class="btn btn-primary" onclick="doAdd('')">新增</button>
             <input type="text" class="form-control" id="searchContent" name="searchContent" placeholder="請輸入查詢內容" value="{{ $search }}" />
         </div>
