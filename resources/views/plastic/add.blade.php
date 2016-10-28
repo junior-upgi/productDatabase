@@ -76,7 +76,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
                     <button type="submit" class="btn btn-primary" data-loading-text="資料送出中..." autocomplete="off" 
-                        id="btnSave" onclick="DoInsert()">Save</button>
+                        id="btnSave">Save</button>
                 </div>
             </form>
         </div><!-- /.modal-content -->
