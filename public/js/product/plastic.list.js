@@ -19,7 +19,7 @@ $(function () {
                     $("#searchForm").submit();
                 });
             } else {
-                swal("儲存敗!", obj.msg, "error");
+                swal("儲存失敗!", obj.msg, "error");
                 $('#btnSave').button('reset');
             }
         },
@@ -28,7 +28,7 @@ $(function () {
             $('#BtnAdd').button('reset');
         }
     });
-    $("#aaa tr").hover(
+    $("#tbody tr").hover(
         function(){
             var picURL = picURL = url + '/storage/';
             var photo = $(this).children('td').children('#photoLocation').val();
@@ -46,6 +46,13 @@ $(function () {
         }
     );
 });
+
+function detail(json) {
+    json = JSON.parse(json);
+    $('#detailTitle').html('[' + json['referenceNumber'] + ']詳細資訊');
+    //picURL = url + '/storage/' + src;
+    $('#DetailModal').modal('show');
+}
 
 function doAdd(json) {
     if (json == '') {
