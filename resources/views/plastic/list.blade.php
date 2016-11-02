@@ -2,18 +2,20 @@
 @section('content')
 <script src="{{url('/')}}/js/product/plastic.list.js?x=2"></script>
 <h3>塑膠產品資料表</h3>
-<form id="searchForm" action="{{url('/')}}/plastic" method="GET">
-    <div class="col-md-1 col-xs-3">
-        <button type="button" class="btn btn-primary" onclick="doAdd('')">新增</button>
-    </div>
-    <div class="input-group col-md-4 col-xs-9">
-        <input type="text" class="form-control" id="searchContent" name="searchContent" placeholder="請輸入查詢內容" value="{{ $search }}" />
-        <span class="input-group-btn">
-            <button type="submit" class="btn btn-default">查詢</button>
-        </span>
-    </div>
-</form>
-<p>
+<div class="row">
+    <form id="searchForm" action="{{url('/')}}/plastic" method="GET">
+        <div class="col-md-1 col-xs-3">
+            <button type="button" class="btn btn-primary" onclick="doAdd('')">新增</button>
+        </div>
+        <div class="input-group col-md-4 col-xs-8">
+            <input type="text" class="form-control" id="searchContent" name="searchContent" placeholder="請輸入查詢內容" value="{{ $search }}" />
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-default">查詢</button>
+            </span>
+        </div>
+    </form>
+</div>
+<p></p>
 @if(isset($plastic))
 <div class="table-responsive">
     <table class="table table-bordered table-condensed">
@@ -61,7 +63,6 @@
     </table>
 </div>
 @endif
-</p>
 @include('plastic.add')
 @include('plastic.detail')
 @endsection

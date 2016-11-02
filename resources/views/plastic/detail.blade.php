@@ -14,8 +14,9 @@
                         <img id="printShow" class="img-responsive img-thumbnail" src="">
                     </div>
                 </div>
-                <p>
-                    <div class="table-responsive">
+                <p></p>
+                <div class="row">
+                    <div class="col-md-12">
                         <table class="table table-bordered table-condensed">
                             <tbody>
                                 <tr>
@@ -53,7 +54,7 @@
                             </tbody>
                         </table>                
                     </div>
-                </p>
+                </div>
                 
             </div>
             <div class="modal-footer">
