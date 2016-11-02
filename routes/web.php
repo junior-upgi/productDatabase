@@ -17,3 +17,5 @@ Route::get('/', function () {
 Route::get('plastic', 'ProductController@plasticList');
 Route::post('plasticSave', 'ProductController@plasticSave');
 Route::post('plasticDelete', 'ProductController@plasticDelete');
+
+Route::get('plastic/export', 'ProductController@exportExcel');

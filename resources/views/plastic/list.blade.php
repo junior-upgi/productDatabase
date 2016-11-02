@@ -2,12 +2,23 @@
 @section('content')
 <script src="{{url('/')}}/js/product/plastic.list.js?x=2"></script>
 <h3>塑膠產品資料表</h3>
+<p><p/>
 <div class="row">
-    <form id="searchForm" action="{{url('/')}}/plastic" method="GET">
-        <div class="col-md-1 col-xs-3">
-            <button type="button" class="btn btn-primary" onclick="doAdd('')">新增</button>
-        </div>
-        <div class="input-group col-md-4 col-xs-8">
+    <div class="btn-group col-md-6 col-xs-6">
+        <button type="button" class="btn btn-primary" onclick="doAdd('')">
+            <span class="glyphicon glyphicon-plus"></span>
+            新增
+        </button>
+        <a href="{{ url('/plastic/export') }}" class="btn btn-success">
+            <span class="glyphicon glyphicon-export"></span>
+            匯出
+        </a>
+    </div>
+</div>
+<p></p>
+<div class="row">
+    <form class="col-md-4 col-xs-12" id="searchForm" action="{{ url('/plastic') }}" method="GET">
+        <div class="input-group">
             <input type="text" class="form-control" id="searchContent" name="searchContent" placeholder="請輸入查詢內容" value="{{ $search }}" />
             <span class="input-group-btn">
                 <button type="submit" class="btn btn-default">查詢</button>

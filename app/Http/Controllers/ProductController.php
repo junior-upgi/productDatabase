@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 
 use App\Repositories\ProductRepository;
 
+use App\Service\Export;
 
 /**
  * Class ProductController
@@ -23,10 +24,14 @@ use App\Repositories\ProductRepository;
 class ProductController extends Controller
 {
     private $product;
+    private $export;
 
-    public function __construct(ProductRepository $product)
-    {
+    public function __construct(
+        ProductRepository $product,
+        Export $export
+    ) {
         $this->product = $product;
+        $this->export = $export;
     }
 
     public function plasticList()
@@ -95,5 +100,23 @@ class ProductController extends Controller
         $ind = $input['ind'];
         $del = $this->product->plasticDelete($ind);
         return $del;
+    }
+
+    public function exportExcel()
+    {
+        $table = $this->product->getPlastic()->get()->toArray();
+        $head = [
+            'referenceNumber' => '產品代號',
+            'alias' => '別號',
+            'description' => '描述',
+            'material' => '材質',
+            'weight' => 'weight',
+            'cavity' => 'cavity',
+            'cycleTime' => 'cycleTime',
+            'unitCost' => 'unitCost',
+        ];
+        $fileName = '塑膠產品清單';
+        $sheetName = '塑膠產品基本資料';
+        $this->export->excel($fileName, $sheetName, $head, $table);
     }
 }
