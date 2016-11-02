@@ -9,7 +9,7 @@
             <span class="glyphicon glyphicon-plus"></span>
             新增
         </button>
-        <a href="{{ url('/plastic/export') }}" class="btn btn-success">
+        <a href="{{ url('/plasticExport') }}" class="btn btn-success">
             <span class="glyphicon glyphicon-export"></span>
             匯出
         </a>
