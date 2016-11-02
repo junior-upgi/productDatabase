@@ -36,19 +36,19 @@
                                     <td><span id="material"></span></td>
                                 </tr>
                                 <tr>
-                                    <td>weight</td>
+                                    <td>重量(g)</td>
                                     <td><span id="weight"></span></td>
                                 </tr>
                                 <tr>
-                                    <td>cavity</td>
+                                    <td>穴數</td>
                                     <td><span id="cavity"></span></td>
                                 </tr>
                                 <tr>
-                                    <td>cycle time</td>
+                                    <td>循環時間(s)</td>
                                     <td><span id="cycleTime"></span></td>
                                 </tr>
                                 <tr>
-                                    <td>unit cost</td>
+                                    <td>單價(NT$)</td>
                                     <td><span id="unitCost"></span></td>
                                 </tr>
                             </tbody>

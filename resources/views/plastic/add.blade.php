@@ -37,25 +37,25 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="weight" class="col-md-4 control-label">weight</label>
+                        <label for="weight" class="col-md-4 control-label">重量(g)</label>
                         <div class="col-md-5">
                             <input type="text" class="form-control" id="weight" name="weight" value="" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="cavity" class="col-md-4 control-label">cavity</label>
+                        <label for="cavity" class="col-md-4 control-label">穴數</label>
                         <div class="col-md-5">
                             <input type="text" class="form-control" id="cavity" name="cavity" value="" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="cycleTime" class="col-md-4 control-label">cycle time</label>
+                        <label for="cycleTime" class="col-md-4 control-label">循環時間(s)</label>
                         <div class="col-md-5">
                             <input type="text" class="form-control" id="cycleTime" name="cycleTime" value="" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="unitCost" class="col-md-4 control-label">unit cost</label>
+                        <label for="unitCost" class="col-md-4 control-label">單價(NT$)</label>
                         <div class="col-md-5">
                             <input type="text" class="form-control" id="unitCost" name="unitCost" value="" required>
                         </div>

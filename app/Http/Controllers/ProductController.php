@@ -110,10 +110,10 @@ class ProductController extends Controller
             'alias' => '別號',
             'description' => '描述',
             'material' => '材質',
-            'weight' => 'weight',
-            'cavity' => 'cavity',
-            'cycleTime' => 'cycleTime',
-            'unitCost' => 'unitCost',
+            'weight' => '重量(g)',
+            'cavity' => '穴數',
+            'cycleTime' => '循環時間(s)',
+            'unitCost' => '單價(NT$)',
         ];
         $fileName = '塑膠產品清單';
         $sheetName = '塑膠產品基本資料';

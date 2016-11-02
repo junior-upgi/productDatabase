@@ -37,10 +37,10 @@
                 <td class="hidden-xs">別號</td>
                 <td>描述</td>
                 <td class="hidden-xs">材質</td>
-                <td class="hidden-xs">weight</td>
-                <td class="hidden-xs">cavity</td>
-                <td class="hidden-xs">cycle time</td>
-                <td class="hidden-xs">unit cost</td>
+                <td class="hidden-xs">重量(g)</td>
+                <td class="hidden-xs">穴數</td>
+                <td class="hidden-xs">循環時間(s)</td>
+                <td class="hidden-xs">單價(NT$)</td>
                 <td width="40"></td>
                 <td width="40"></td>
             </tr>
