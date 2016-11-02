@@ -28,12 +28,7 @@ $(function () {
             $('#BtnAdd').button('reset');
         }
     });
-    $('#photo').on('fileclear', function(event) {
-        $('#photoSet').val('clear');
-    });
-    $('#print').on('fileclear', function(event) {
-        $('#printSet').val('clear');
-    });
+    
 });
 
 function detail(json) {
@@ -174,4 +169,31 @@ function fileSet(category, src) {
         initialPreview: 
             [img]
     });
+    $('#photo').on('filebatchselected', function(event) {
+        resetAddModal()
+    });
+    $('#photo').on('filecleared', function(event) {
+        resetAddModal()
+    });
+    $('#print').on('filebatchselected', function(event) {
+        resetAddModal()
+    });
+    $('#print').on('filecleared', function(event) {
+        resetAddModal()
+    });
+    $('#photo').on('fileclear', function(event) {
+        $('#photoSet').val('clear');
+    });
+    $('#print').on('fileclear', function(event) {
+        $('#printSet').val('clear');
+    });
+}
+function resetAddModal() {
+    var modalHeight = $('#AddModal .modal-dialog').height() + 30;
+    if ($('#AddModal').height() > modalHeight) {
+        $('#AddModal .modal-backdrop').height($('#AddModal').height());
+    } else {
+        $('#AddModal .modal-backdrop').height(modalHeight);
+    }
+    
 }

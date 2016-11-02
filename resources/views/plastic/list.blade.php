@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<script src="{{url('/')}}/js/product/plastic.list.js?x=1"></script>
+<script src="{{url('/')}}/js/product/plastic.list.js?x=2"></script>
 <h3>塑膠產品資料表</h3>
 <form id="searchForm" action="{{url('/')}}/plastic" method="GET">
     <div class="col-md-1 col-xs-3">
