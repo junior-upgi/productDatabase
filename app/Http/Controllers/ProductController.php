@@ -117,6 +117,6 @@ class ProductController extends Controller
         ];
         $fileName = '塑膠產品清單';
         $sheetName = '塑膠產品基本資料';
-        $this->export->excel($fileName, $sheetName, $head, $table);
+        return $this->export->excel($fileName, $sheetName, $head, $table);
     }
 }
