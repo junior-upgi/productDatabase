@@ -80,10 +80,8 @@ function doAdd(json) {
         $('#cavity').val('');
         $('#cycleTime').val('');
         $('#unitCost').val('');
-        fileInit('photo', null);
-        fileInit('print', null);
-        $('#photoSet').val('clear');
-        $('#printSet').val('clear');
+        fileSet('photo', null);
+        fileSet('print', null);
     } else {
         json = JSON.parse(json);
         $('#modalTitle').html('編輯產品資料');
@@ -98,8 +96,8 @@ function doAdd(json) {
         $('#cavity').val(json['cavity']);
         $('#cycleTime').val(json['cycleTime']);
         $('#unitCost').val(json['unitCost']);
-        fileInit('photo', json['photoLocation']);
-        fileInit('print', json['printLocation']);
+        fileSet('photo', json['photoLocation']);
+        fileSet('print', json['printLocation']);
     }
     $('#AddModal').modal('show');
 }
@@ -175,35 +173,5 @@ function fileSet(category, src) {
         },
         initialPreview: 
             [img]
-    });
-}
-function fileInit(category, src) {
-    if (src != null) {
-        var img = url + '/storage/' + src
-    } else {
-        var img = null;
-    }
-    
-    $('#' + category).fileinput({
-       initialPreview: [
-             img,
-        ],
-        initialPreviewAsData: true,
-        overwriteInitial: true,
-        initialCaption: src,
-        language: 'zh-TW',
-        previewFileType: 'image',
-        allowedFileExtensions: ['jpg', 'jpeg', 'png', 'gif'],
-        previewClass: 'bg-warning',
-        browseClass: 'btn btn-success',
-        browseLabel: '選擇圖片',
-        browseIcon: '<i class=\'glyphicon glyphicon-picture\'></i> ',
-        removeClass: 'btn btn-danger',
-        removeLabel: '移除',
-        removeIcon: '<i class=\'glyphicon glyphicon-trash\'></i> ',
-        fileActionSettings: {
-            showZoom: false,
-            showDrag: false,
-        },
     });
 }

@@ -63,13 +63,15 @@
                     <div class="form-group">
                         <label class="control-label col-md-4">照片</label>
                         <div class="col-md-6">
-                            <input id="photo" name="photo" type="file" class="file-loading" data-show-upload="false" accept="image/*">
+                            <div id="photoDiv"></div>
+                            <!--<input id="photo" name="photo" type="file" class="file-loading" data-show-upload="false" accept="image/*">-->
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-4">圖面</label>
                         <div class="col-md-6">
-                            <input id="print" name="print" type="file" class="file-loading" data-show-upload="false" accept="image/*">
+                            <div id="printDiv"></div>
+                            <!--<input id="print" name="print" type="file" class="file-loading" data-show-upload="false" accept="image/*">-->
                         </div>
                     </div>
                 </div>
