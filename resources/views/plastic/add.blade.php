@@ -10,7 +10,8 @@
                     <input type="hidden" name="_token" value="{{{ csrf_token() }}}">
                     <input type="hidden" id="type" name="type" value="">
                     <input type="hidden" id="ind" name="ind" value="">
-                    <input type="hidden" id="fileSet" name="fileSet" value="">
+                    <input type="hidden" id="photoSet" name="photoSet" value="">
+                    <input type="hidden" id="printSet" name="printSet" value="">
                     <div class="form-group">
                         <label for="referenceNumber" class="col-md-4 control-label">產品代號</label>
                         <div class="col-md-5">
@@ -62,14 +63,13 @@
                     <div class="form-group">
                         <label class="control-label col-md-4">照片</label>
                         <div class="col-md-6">
-                            <div id="photoDiv">
-                            </div>
+                            <input id="photo" name="photo" type="file" class="file-loading" data-show-upload="false" accept="image/*">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-4">圖面</label>
                         <div class="col-md-6">
-                            <div id="printDiv"></div>
+                            <input id="print" name="print" type="file" class="file-loading" data-show-upload="false" accept="image/*">
                         </div>
                     </div>
                 </div>

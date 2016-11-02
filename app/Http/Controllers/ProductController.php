@@ -57,16 +57,22 @@ class ProductController extends Controller
         $input = $request->input();
         $ind = $request->input('ind');
         $type = $request->input('type');
-        $ignore = ['_token', 'img', 'type', 'ind', 'fileSet', 'photo', 'print'];
+        $photoSet = $request->input('photoSet');
+        $printSet = $request->input('printSet');
+        $ignore = ['_token', 'img', 'type', 'ind', 'photoSet', 'printSet', 'photo', 'print'];
         $input = array_except($input, $ignore);
         $params = array();
         if (isset($photo)) {
             $photoLocation = $this->product->saveFile($photo);
             $params['photoLocation'] = iconv("UTF-8", "BIG-5", $photoLocation);
+        } else if($photoSet = 'clear') {
+            $params['photoLocation'] = null;
         }
         if (isset($print)) {
             $printLocation = $this->product->saveFile($print);
             $params['printLocation'] = iconv("UTF-8", "BIG-5", $printLocation);
+        } else if($printSet) {
+            $params['printLocation'] = null;
         }
         $countInput = count($input);
         list($key, $value) = array_divide($input);
