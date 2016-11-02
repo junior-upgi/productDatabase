@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<script src="{{url('/')}}/js/product/plastic.list.js?x=2"></script>
+<script src="{{url('/')}}/js/product/plastic.list.js?x=1"></script>
 <h3>塑膠產品資料表</h3>
 <form id="searchForm" action="{{url('/')}}/plastic" method="GET">
     <div class="col-md-1 col-xs-3">
@@ -16,18 +16,18 @@
 <p>
 @if(isset($plastic))
 <div class="table-responsive">
-    <table class="table table-bordered table-condensed table-responsive">
+    <table class="table table-bordered table-condensed">
         <thead>
             <tr>
-                <td>#</td>
+                <td></td>
                 <td>產品代號</td>
                 <td class="hidden-xs">別號</td>
                 <td>描述</td>
                 <td class="hidden-xs">材質</td>
                 <td class="hidden-xs">weight</td>
                 <td class="hidden-xs">cavity</td>
-                <td class="hidden-xs">cycleTime</td>
-                <td class="hidden-xs">unitCost</td>
+                <td class="hidden-xs">cycle time</td>
+                <td class="hidden-xs">unit cost</td>
                 <td width="40"></td>
                 <td width="40"></td>
             </tr>
@@ -38,7 +38,7 @@
                 $json = (string) $p;
             @endphp
             <tr>
-                <td>
+                <td class="text-center">
                     <span class="glyphicon glyphicon-info-sign" onclick="detail('{{ $json }}')"></span>
                 </td>
                 <td>

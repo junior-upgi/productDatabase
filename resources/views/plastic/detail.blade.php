@@ -6,8 +6,58 @@
                 <h4 class="modal-title" id="detailTitle"></h4>
             </div>
             <div class="modal-body">
-                <img id="photoShow" data-src="holder.js/140x140" class="img-thumbnail" src="" data-holder-rendered="true" style="width: 150px; height: 150px;">
-                <img id="photoShow" data-src="holder.js/140x140" class="img-thumbnail" src="" data-holder-rendered="true" style="width: 150px; height: 150px;">
+                <div class="row">
+                    <div class="col-md-6 col-xs-6">
+                        <img id="photoShow" class="img-responsive img-rounded" src="">
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        <img id="printShow" class="img-responsive img-rounded" src="">
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-condensed">
+                        <thead>
+                            <tr>
+                                <td>項目</td>
+                                <td>內容</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col-md-2 col-xs-3">產品代號</td>
+                                <td><span id="referenceNumber"></span></td>
+                            </tr>
+                            <tr>
+                                <td>別號</td>
+                                <td><span id="alias"></span></td>
+                            </tr>
+                            <tr>
+                                <td>描述</td>
+                                <td><span id="description"></span></td>
+                            </tr>
+                            <tr>
+                                <td>材質</td>
+                                <td><span id="material"></span></td>
+                            </tr>
+                            <tr>
+                                <td>weight</td>
+                                <td><span id="weight"></span></td>
+                            </tr>
+                            <tr>
+                                <td>cavity</td>
+                                <td><span id="cavity"></span></td>
+                            </tr>
+                            <tr>
+                                <td>cycle time</td>
+                                <td><span id="cycleTime"></span></td>
+                            </tr>
+                            <tr>
+                                <td>unit cost</td>
+                                <td><span id="unitCost"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>                
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>

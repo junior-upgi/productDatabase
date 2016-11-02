@@ -48,13 +48,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="cycleTime" class="col-md-4 control-label">cycleTime</label>
+                        <label for="cycleTime" class="col-md-4 control-label">cycle time</label>
                         <div class="col-md-5">
                             <input type="text" class="form-control" id="cycleTime" name="cycleTime" value="" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="unitCost" class="col-md-4 control-label">unitCost</label>
+                        <label for="unitCost" class="col-md-4 control-label">unit cost</label>
                         <div class="col-md-5">
                             <input type="text" class="form-control" id="unitCost" name="unitCost" value="" required>
                         </div>
