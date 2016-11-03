@@ -76,7 +76,7 @@ class ProductController extends Controller
                     'msg' => $photoLocation['msg'],
                 ];
             }
-            $params['photoLocation'] = iconv($encode, "BIG5", $photoLocation['fileName']);
+            $params['photoLocation'] = iconv("UTF-8", "BIG5", $photoLocation['fileName']);
         } else if($photoSet == 'clear') {
             $params['photoLocation'] = null;
         }
@@ -88,7 +88,7 @@ class ProductController extends Controller
                     'msg' => $printLocation['msg'],
                 ];
             }
-            $params['printLocation'] = iconv($encode, "BIG5", $printLocation['fileName']);
+            $params['printLocation'] = iconv("UTF-8", "BIG5", $printLocation['']);
         } else if($printSet == 'clear') {
             $params['printLocation'] = null;
         }
