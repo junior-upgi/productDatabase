@@ -77,11 +77,30 @@ class ProductRepository
     public function saveFile($file)
     {
         try {
+            if ($file->isValid()){
+                File::append(storage_path('logs/check.log'), "file valid: true \r\n");
+            } else {
+                File::append(storage_path('logs/check.log'), "file valid: false \r\n");
+            }
             File::append(storage_path('logs/check.log'), "savefile: $file \r\n");
+
+            $oname = $file->getClientOriginalName();
+            File::append(storage_path('logs/check.log'), "file o name: $oname \r\n");
+            $tmpName = $file->getFileName();
+            File::append(storage_path('logs/check.log'), "file tem name: $tmpName \r\n");
+            $realPath = $file->getRealPath(); 
+            File::append(storage_path('logs/check.log'), "real path: $realPath \r\n");
+
+            
+
             $extension = $file->getClientOriginalExtension();
+
             File::append(storage_path('logs/check.log'), "extension: $extension \r\n");
+
             $file_name = strval(time()).str_random(5).'.'.$extension;
+
             File::append(storage_path('logs/check.log'), "file name: $file_name \r\n");
+
             $destination_path = public_path().'/storage/';
             $upload_success = $file->move($destination_path, $file_name);
             return $file_name;
