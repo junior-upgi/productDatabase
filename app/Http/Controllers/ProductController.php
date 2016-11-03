@@ -69,12 +69,14 @@ class ProductController extends Controller
         $params = array();
         if (isset($photo)) {
             $photoLocation = $this->product->saveFile($photo);
+            $encode = mb_detect_encoding($photoLocation, array("ASCII",'UTF-8','GB2312','GBK','BIG5'));
             $params['photoLocation'] = $photoLocation;
         } else if($photoSet == 'clear') {
             $params['photoLocation'] = null;
         }
         if (isset($print)) {
             $printLocation = $this->product->saveFile($print);
+            $encode = mb_detect_encoding($printLocation, array("ASCII",'UTF-8','GB2312','GBK','BIG5'));
             $params['printLocation'] = $printLocation;
         } else if($printSet == 'clear') {
             $params['printLocation'] = null;

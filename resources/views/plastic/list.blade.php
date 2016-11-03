@@ -3,7 +3,7 @@
 <script src="{{url('/')}}/js/product/plastic.list.js?x=2"></script>
 <h3>塑膠產品資料表</h3>
 <div class="row">
-    <div class="btn-group col-md-6 col-xs-6">
+    <div class="btn-group col-md-6 col-xs-12">
         <button type="button" class="btn btn-primary" onclick="doAdd('')">
             <span class="glyphicon glyphicon-plus"></span>
             新增
