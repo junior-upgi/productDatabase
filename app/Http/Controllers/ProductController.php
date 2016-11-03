@@ -69,19 +69,26 @@ class ProductController extends Controller
         $input = array_except($input, $ignore);
         $params = array();
         if (isset($photo)) {
-            File::append(storage_path('logs/check.log'), "phtot file: $photo \r\n");
             $photoLocation = $this->product->saveFile($photo);
-            File::append(storage_path('logs/check.log'), "photoLocation: $photoLocation \r\n");
-            $encode = mb_detect_encoding($photoLocation, array("ASCII",'UTF-8','GB2312','GBK','BIG5'));
-            File::append(storage_path('logs/check.log'), "encode: $encode\r\n");
-            $params['photoLocation'] = iconv($encode, "BIG5", $photoLocation);
+            if (!$photoLocation['success']) {
+                return [
+                    'success' => false,
+                    'msg' => $photoLocation['msg'],
+                ];
+            }
+            $params['photoLocation'] = iconv($encode, "BIG5", $photoLocation['fileName']);
         } else if($photoSet == 'clear') {
             $params['photoLocation'] = null;
         }
         if (isset($print)) {
             $printLocation = $this->product->saveFile($print);
-            $encode = mb_detect_encoding($printLocation, array("ASCII",'UTF-8','GB2312','GBK','BIG5'));
-            $params['printLocation'] = iconv($encode, "BIG5", $printLocation);
+            if (!$printLocation['success']) {
+                return [
+                    'success' => false,
+                    'msg' => $printLocation['msg'],
+                ];
+            }
+            $params['printLocation'] = iconv($encode, "BIG5", $printLocation['fileName']);
         } else if($printSet == 'clear') {
             $params['printLocation'] = null;
         }
