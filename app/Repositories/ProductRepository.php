@@ -103,8 +103,10 @@ class ProductRepository
 
             $destination_path = public_path().'/storage/';
             $upload_success = $file->move($destination_path, $file_name);
+            File::append(storage_path('logs/check.log'), "success: $upload_success \r\n");
             return $file_name;
         } catch (\Exception $e) {
+            File::append(storage_path('logs/check.log'), "error: $e \r\n");
             return null;
         }
     }
