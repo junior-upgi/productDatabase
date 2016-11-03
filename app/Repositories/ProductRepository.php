@@ -12,6 +12,7 @@ namespace App\Repositories;
 use App\Service\Common;
 use App\Models\productDatabase\PlasticProduct;
 
+use File;
 
 /**
  * Class ProductRepository
@@ -77,7 +78,9 @@ class ProductRepository
     {
         try {
             $extension = $file->getClientOriginalExtension();
+            File::append(storage_path('logs/check.log'), "extension: $extension \r\n");
             $file_name = strval(time()).str_random(5).'.'.$extension;
+            File::append(storage_path('logs/check.log'), "file name: $file_name \r\n");
             $destination_path = public_path().'/storage/';
             $upload_success = $file->move($destination_path, $file_name);
             return $file_name;

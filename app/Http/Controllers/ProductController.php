@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 
 use App\Service\Export;
+use File;
 
 /**
  * Class ProductController
@@ -69,7 +70,9 @@ class ProductController extends Controller
         $params = array();
         if (isset($photo)) {
             $photoLocation = $this->product->saveFile($photo);
+            File::append(storage_path('logs/check.log'), "phtot file: $photo \r\n");
             $encode = mb_detect_encoding($photoLocation, array("ASCII",'UTF-8','GB2312','GBK','BIG5'));
+            File::append(storage_path('logs/check.log'), "encode: $encode\r\n");
             $params['photoLocation'] = iconv($encode, "BIG5", $photoLocation);
         } else if($photoSet == 'clear') {
             $params['photoLocation'] = null;
