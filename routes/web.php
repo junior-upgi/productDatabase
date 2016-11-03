@@ -14,8 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('plastic', 'ProductController@plasticList');
-Route::post('plasticSave', 'ProductController@plasticSave');
-Route::post('plasticDelete', 'ProductController@plasticDelete');
 
-Route::get('plasticExport', 'ProductController@exportExcel');
+Route::get('login', 'Auth\LoginController@show');
+Route::post('login', 'Auth\LoginController@login');
+Route::get('logout', 'Auth\LoginController@logout');
+
+Route::group(['middleware' => 'auth', 'prefix' => 'plastic'], function() {
+    Route::get('/', function () { return redirect('plastic/list'); });
+    Route::get('list', 'ProductController@plasticList');
+    Route::post('save', 'ProductController@plasticSave');
+    Route::post('delete', 'ProductController@plasticDelete');
+    Route::get('export', 'ProductController@exportExcel');
+});
+

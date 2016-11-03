@@ -46,26 +46,6 @@ return [
 
     'connections' => [
 
-        'sqlite' => [
-            'driver' => 'sqlite',
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
-            'prefix' => '',
-        ],
-
-        'mysql' => [
-            'driver' => 'mysql',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix' => '',
-            'strict' => true,
-            'engine' => null,
-        ],
-
         'MSSQL' => [
             'driver' => 'sqlsrv',
             'host' => env('MSSQL_HOST', '192.168.168.5'),
@@ -80,17 +60,18 @@ return [
             'engine' => null,
         ],
 
-        'pgsql' => [
-            'driver' => 'pgsql',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
+        'DB_upgiSystem' => [
+            'driver' => 'mysql',
+            'host' => env('MYSQL_HOST', '192.168.168.86'),
+            'port' => env('MYSQL_PORT', '3306'),
+            'database' => 'upgiSystem',
+            'username' => env('MYSQL_USERNAME', 'spark'),
+            'password' => env('MYSQL_PASSWORD', 'pa676579'),
+            'charset' => env('MYSQL_CHARSET', 'utf8'),
+            'collation' => env('MYSQL_COLLATION', 'utf8_unicode_ci'),
             'prefix' => '',
-            'schema' => 'public',
-            'sslmode' => 'prefer',
+            'strict' => false,
+            'engine' => null,
         ],
 
     ],

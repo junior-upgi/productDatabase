@@ -10,7 +10,7 @@
 namespace App\Repositories;
 
 use App\Service\Common;
-use App\Models\PlasticProduct;
+use App\Models\productDatabase\PlasticProduct;
 
 
 /**

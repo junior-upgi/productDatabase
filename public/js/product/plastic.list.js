@@ -1,6 +1,6 @@
 $(function () {
     $('#AddForm').ajaxForm({
-        url: url + '/plasticSave',
+        url: url + '/plastic/save',
         beforeSubmit: function () {
             //$('#btnSave').button('loading');
         },
@@ -111,7 +111,7 @@ function doDelete(ind) {
     function(){
         var data = {'ind': ind};
         $.ajax({
-            url: url + '/plasticDelete',
+            url: url + '/plastic/delete',
             type: 'POST',
             headers: { 'X-CSRF-TOKEN': $('meta[name=\'csrf-token\']').attr('content') },
             data: JSON.stringify(data),
