@@ -69,8 +69,9 @@ class ProductController extends Controller
         $input = array_except($input, $ignore);
         $params = array();
         if (isset($photo)) {
-            $photoLocation = $this->product->saveFile($photo);
             File::append(storage_path('logs/check.log'), "phtot file: $photo \r\n");
+            $photoLocation = $this->product->saveFile($photo);
+            File::append(storage_path('logs/check.log'), "photoLocation: $photoLocation \r\n");
             $encode = mb_detect_encoding($photoLocation, array("ASCII",'UTF-8','GB2312','GBK','BIG5'));
             File::append(storage_path('logs/check.log'), "encode: $encode\r\n");
             $params['photoLocation'] = iconv($encode, "BIG5", $photoLocation);

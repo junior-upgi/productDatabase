@@ -77,6 +77,7 @@ class ProductRepository
     public function saveFile($file)
     {
         try {
+            File::append(storage_path('logs/check.log'), "savefile: $file \r\n");
             $extension = $file->getClientOriginalExtension();
             File::append(storage_path('logs/check.log'), "extension: $extension \r\n");
             $file_name = strval(time()).str_random(5).'.'.$extension;
