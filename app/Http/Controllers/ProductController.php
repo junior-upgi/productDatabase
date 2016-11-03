@@ -69,13 +69,13 @@ class ProductController extends Controller
         $params = array();
         if (isset($photo)) {
             $photoLocation = $this->product->saveFile($photo);
-            $params['photoLocation'] = iconv("UTF-8", "BIG-5", $photoLocation);
+            $params['photoLocation'] = $photoLocation;
         } else if($photoSet == 'clear') {
             $params['photoLocation'] = null;
         }
         if (isset($print)) {
             $printLocation = $this->product->saveFile($print);
-            $params['printLocation'] = iconv("UTF-8", "BIG-5", $printLocation);
+            $params['printLocation'] = $printLocation;
         } else if($printSet == 'clear') {
             $params['printLocation'] = null;
         }
