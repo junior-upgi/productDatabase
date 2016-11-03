@@ -144,7 +144,7 @@ function doDelete(ind) {
 function fileSet(category, src) {
     if (src != null) {
         picURL = url + '/storage/' + src;
-        var img = '<img src=\'' + picURL + '\' class=\'kv-preview-data file-preview-image\' style=\'width:auto;height:160px;\'>';
+        var img = '<img src=\'' + picURL + '\' class=\'kv-preview-data file-preview-image img-responsive\' >';
         $('#' + category + 'Set').val(src);
     } else {
         var img = null;
@@ -154,6 +154,8 @@ function fileSet(category, src) {
     $('#' + category).fileinput({
         language: 'zh-TW',
         previewFileType: 'image',
+        maxFilePreviewSize: 5120,
+        maxFileSize: 5120,
         allowedFileExtensions: ['jpg', 'jpeg', 'png', 'gif'],
         previewClass: 'bg-warning',
         browseClass: 'btn btn-success',
