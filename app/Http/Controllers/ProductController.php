@@ -2,10 +2,11 @@
 /**
  * Product程式邏輯處理
  *
- * @version 1.0.0
+ * @version 1.0.1
  * @author spark it@upgi.com.tw
  * @date 16/10/26
  * @since 1.0.0 spark: 於此版本開始編寫註解
+ * @since 1.0.1 spark: 完成plastic CRUD
  */
 namespace App\Http\Controllers;
 
@@ -24,9 +25,18 @@ use File;
  */
 class ProductController extends Controller
 {
+    /** @var ProductRepository 注入ProductRepository */
     private $product;
+    /** @var Export 注入Export */
     private $export;
 
+    /**
+     * 建構式
+     *
+     * @param ProductRepository $product
+     * @param Export $export
+     * @return void
+     */
     public function __construct(
         ProductRepository $product,
         Export $export
@@ -35,6 +45,12 @@ class ProductController extends Controller
         $this->export = $export;
     }
 
+    /**
+     * 取得plastic清單
+     * 含查詢功能
+     * 
+     * @return view plastic.list
+     */
     public function plasticList()
     {
         $request = request();
@@ -55,8 +71,14 @@ class ProductController extends Controller
             ->with('search', $searchContent);
     }
 
+    /**
+     * 新增、更新plastic資料
+     * 
+     * @return array 回傳結果
+     */
     public function plasticSave()
     {
+        //取得與設定變數
         $request = request();
         $photo = $request->file('photo');
         $print = $request->file('print');
@@ -68,6 +90,8 @@ class ProductController extends Controller
         $ignore = ['_token', 'img', 'type', 'ind', 'photoSet', 'printSet', 'photo', 'print'];
         $input = array_except($input, $ignore);
         $params = array();
+
+        //驗證並儲存photo檔案
         if (isset($photo)) {
             $photoLocation = $this->product->saveFile($photo);
             if (!$photoLocation['success']) {
@@ -80,6 +104,8 @@ class ProductController extends Controller
         } else if($photoSet == 'clear') {
             $params['photoLocation'] = null;
         }
+
+        //驗證並儲存print檔案
         if (isset($print)) {
             $printLocation = $this->product->saveFile($print);
             if (!$printLocation['success']) {
@@ -92,12 +118,16 @@ class ProductController extends Controller
         } else if($printSet == 'clear') {
             $params['printLocation'] = null;
         }
+
+        //格式化寫入資料
         $countInput = count($input);
         list($key, $value) = array_divide($input);
         for ($i = 0; $i < $countInput; $i++) {
             $big5 = iconv("UTF-8", "BIG-5", $value[$i]);
             $params[$key[$i]] = $big5;
         }
+
+        //判斷資料寫入方式
         if ($type == 'add') {
             $tran = $this->product->plasticInsert($params);
         } else if ($type = 'edit') {
@@ -105,7 +135,12 @@ class ProductController extends Controller
         }
         return $tran;
     }
-
+    
+    /**
+     * 刪除plastic資料
+     * 
+     * @return array 回傳結果
+     */
     public function plasticDelete()
     {
         $request = request();
@@ -115,6 +150,11 @@ class ProductController extends Controller
         return $del;
     }
 
+    /**
+     * 匯出plastic excel資料
+     * 
+     * @return Excel 匯出檔案
+     */
     public function exportExcel()
     {
         $table = $this->product->getPlastic()->get()->toArray();

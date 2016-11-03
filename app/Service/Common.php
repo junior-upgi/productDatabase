@@ -37,6 +37,13 @@ class Common
         $this->user = $user;
     }
 
+    /**
+     * 新增Module
+     * 
+     * @param Module $table 傳入Module
+     * @param array $params 傳入新增資料
+     * @return array 回傳結果
+     */
     public function insert($table, $params)
     {
         try {
@@ -56,6 +63,13 @@ class Common
         }
     }
 
+    /**
+     * 更新Module
+     * 
+     * @param Module $table 傳入Module
+     * @param array $params 傳入更新資料
+     * @return array 回傳結果
+     */
     public function update($table, $params)
     {
         try {
@@ -75,6 +89,12 @@ class Common
         }
     }
 
+    /**
+     * 刪除module
+     * 
+     * @param Module $table 傳入Module
+     * @return array 回傳結果
+     */
     public function delete($table)
     {
         try {
