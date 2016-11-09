@@ -45,6 +45,7 @@ class LoginController extends Controller
      */
     public function show()
     {
+        $c = csrf_token();
         if (Auth::check()) {
             $user = Auth::user();
             $role = $user->authorization;
@@ -72,7 +73,7 @@ class LoginController extends Controller
         isset($input['remember']) ? $remember = true : $remember = false;
         //驗證表單
         $validator = Validator::make($input, $rules);
-        $type = $type = env('WebSSO', 'LDAP');
+        $type = env('WebSSO', 'LDAP');
         if ($validator->passes()) {
             $attempt = $this->common->singleSignOn($input['account'], $input['password'], $type);
 

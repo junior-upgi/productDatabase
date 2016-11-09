@@ -6,7 +6,7 @@
  * @author spark it@upgi.com.tw
  * @date 16/10/26
  * @since 1.0.0 spark: 於此版本開始編寫註解
- * @since 1.0.1 spark: 完成plastic CRUD
+ * @since 1.0.1 spark: `
  */
 namespace App\Http\Controllers;
 

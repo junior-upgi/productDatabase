@@ -12,7 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    if (starts_with(Request::root(), 'http://'))
+    {
+        $domain = substr (Request::root(), 7); // $domain is now 'www.example.com'
+    }
+    return $domain;
 });
 
 Route::get('login', 'Auth\LoginController@show');

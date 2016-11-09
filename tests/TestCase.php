@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\upgiSystem\User;
+
 abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
 {
     /**
@@ -21,5 +23,10 @@ abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
         $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 
         return $app;
+    }
+
+    protected function userLoggedIn() 
+    {         
+        $this->be(new User(['mobileSystemAccount' => '16080003']));    
     }
 }

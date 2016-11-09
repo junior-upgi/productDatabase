@@ -21,12 +21,12 @@
 <body style="padding-top:40px;padding-bottom:40px;background-color:#eee;">
     <div class="container">
         <form class="form-signin" role="form" action="login" method="POST" style="max-width:330px;padding:15px;margin:auto;">
-			<input type="hidden" name="_token" value="{{{ csrf_token() }}}">
+			<input type="hidden" name="_token" value="{{ csrf_token() }}">
             <h2 class="form-signin-heading">請輸入帳號密碼</h2>
 			<label for="account" class="sr-only">帳號</label>
-			<input type="text" id="account" name="account" class="form-control" placeholder="帳號(員工編號)" required="" autofocus="">
+			<input type="text" id="account" name="account" class="form-control" minlength="4" maxlength="20" placeholder="帳號(員工編號)" required="" autofocus="">
 			<label for="password" class="sr-only">密碼</label>
-			<input type="password" id="password" name="password" class="form-control" placeholder="密碼" required="">
+			<input type="password" id="password" name="password" class="form-control" minlength="4" maxlength="20" placeholder="密碼" required="">
 			@if ($errors->has('fail'))
 				<div class="fail">{{ $errors->first('fail') }}</div>
 			@endif
