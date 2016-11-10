@@ -21,7 +21,7 @@ Route::get('login', 'Auth\LoginController@show');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');
 
-Route::group(['middleware' => 'auth', 'prefix' => 'plastic'], function() {
+Route::group(['middleware' => 'sso', 'prefix' => 'plastic'], function() {
     Route::get('/', function () { return redirect('plastic/list'); });
     Route::get('list', 'ProductController@plasticList');
     Route::post('save', 'ProductController@plasticSave');
