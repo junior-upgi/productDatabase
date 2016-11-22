@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PlasticProduct extends Model
 {   
-    protected $connection = 'MSSQL';
+    protected $connection = 'productDatabase';
     protected $table = "plasticProduct";
     public $timestamps = false;
 }

@@ -13,7 +13,7 @@ class User extends Model implements AuthenticatableContract
     use SoftDeletes;
     use Authenticatable;
     
-    protected $connection = 'DB_upgiSystem';
+    protected $connection = 'upgiSystem';
     protected $table = "user";
     protected $softDelete = true;
 

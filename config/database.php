@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'DB_upgiSystem'),
+    'default' => env('DB_CONNECTION', 'productDatabase'),
 
     /*
     |--------------------------------------------------------------------------
@@ -46,29 +46,29 @@ return [
 
     'connections' => [
 
-        'MSSQL' => [
+        'productDatabase' => [
             'driver' => 'sqlsrv',
-            'host' => env('MSSQL_HOST', '192.168.168.5'),
-            'port' => env('MSSQL_PORT', '1433'),
-            'database' => env('MSSQL_DATABASE', 'productionHistory'),
-            'username' => env('MSSQL_USERNAME', 'productionHistory'),
-            'password' => env('MSSQL_PASSWORD', 'productionHistory'),
-            'charset' => env('MSSQL_CHARSET', 'utf8'),
-            'collation' => env('MSSQL_COLLATION', 'utf8_unicode_ci'),
+            'host' => env('DB_HOST'),
+            'port' => env('DB_PORT'),
+            'database' => 'productDatabase',
+            'username' => env('DB_USERNAME'),
+            'password' => env('DB_PASSWORD'),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
             'prefix' => '',
             'strict' => false,
             'engine' => null,
         ],
 
-        'DB_upgiSystem' => [
-            'driver' => 'mysql',
-            'host' => env('MYSQL_HOST', '192.168.168.86'),
-            'port' => env('MYSQL_PORT', '3306'),
+        'upgiSystem' => [
+            'driver' => 'sqlsrv',
+            'host' => env('DB_HOST'),
+            'port' => env('DB_PORT'),
             'database' => 'upgiSystem',
-            'username' => env('MYSQL_USERNAME', 'spark'),
-            'password' => env('MYSQL_PASSWORD', 'pa676579'),
-            'charset' => env('MYSQL_CHARSET', 'utf8'),
-            'collation' => env('MYSQL_COLLATION', 'utf8_unicode_ci'),
+            'username' => env('DB_USERNAME'),
+            'password' => env('DB_PASSWORD'),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
             'prefix' => '',
             'strict' => false,
             'engine' => null,
